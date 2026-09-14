@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neuromorphic Computing Glossary | NuMorph AI</title>
+<meta name="description" content="Definitions for neuromorphic computing, event-driven vision, ERN-AI, ALB, NESA, and related terms (SWaP, LLM/LVM, DNN/CNN/RNN, FPGA, ASIC, SLAM, ROS).">
+<meta name="author" content="NuMorph AI">
+<link rel="canonical" href="https://numorph.ai/glossary">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NuMorph AI">
+<meta property="og:title" content="Neuromorphic Computing Glossary | NuMorph AI">
+<meta property="og:description" content="Definitions for neuromorphic computing, event-driven vision, ERN-AI, ALB, NESA, and related terms (SWaP, LLM/LVM, DNN/CNN/RNN, FPGA, ASIC, SLAM, ROS).">
+<meta property="og:url" content="https://numorph.ai/glossary">
+<meta property="og:image" content="https://numorph.ai/assets/bio-hexagons.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neuromorphic Computing Glossary | NuMorph AI">
+<meta name="twitter:description" content="Definitions for neuromorphic computing, event-driven vision, ERN-AI, ALB, NESA, and related terms (SWaP, LLM/LVM, DNN/CNN/RNN, FPGA, ASIC, SLAM, ROS).">
+<meta name="twitter:image" content="https://numorph.ai/assets/bio-hexagons.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://numorph.ai/glossary#webpage",
+      "url": "https://numorph.ai/glossary",
+      "name": "Neuromorphic Computing Glossary | NuMorph AI",
+      "description": "Definitions for neuromorphic computing, event-driven vision, ERN-AI, ALB, NESA, and related terms (SWaP, LLM/LVM, DNN/CNN/RNN, FPGA, ASIC, SLAM, ROS).",
+      "isPartOf": {
+        "@id": "/#website"
+      },
+      "inLanguage": "en-US",
+      "author": { "@type": "Organization", "name": "NuMorph AI Inc.", "url": "/" },
+      "publisher": { "@type": "Organization", "name": "NuMorph AI Inc.", "url": "/" },
+      "dateModified": "2026-08-11"
+    },
+    {
+      "@type": "DefinedTermSet",
+      "name": "NuMorph AI Glossary",
+      "description": "Definitions for neuromorphic computing, event-driven vision, ERN-AI, ALB, NESA, and related abbreviations.",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "Neuromorphic computing", "description": "Computing architectures modeled on the structure and behavior of biological nervous systems, typically characterized by event-driven processing, sparse activation, and very low power consumption relative to conventional von Neumann architectures." },
+        { "@type": "DefinedTerm", "name": "Event-driven vision", "description": "A sensing paradigm in which visual data is generated only when the scene changes, rather than captured at a fixed frame rate. Data volume scales with scene activity instead of with time." },
+        { "@type": "DefinedTerm", "name": "Frame-based vision", "description": "The conventional imaging paradigm in which a sensor captures complete images at a fixed rate regardless of scene content, producing substantial redundancy in static or slow-changing scenes." },
+        { "@type": "DefinedTerm", "name": "Analog AI", "description": "AI computation performed using analog physical quantities rather than discrete digital arithmetic, typically achieving significantly lower energy per operation for suitable workloads." },
+        { "@type": "DefinedTerm", "name": "Edge inference", "description": "Running AI model inference on or near the sensor rather than transmitting data to a centralized server or cloud, reducing latency and bandwidth requirements." },
+        { "@type": "DefinedTerm", "name": "Perception-native AI", "description": "AI architecture in which perception processing is structured around the sensing modality itself rather than adapting general-purpose models to sensor output after the fact." },
+        { "@type": "DefinedTerm", "name": "Physical AI", "description": "AI systems that perceive and act in the physical world, including robots, drones, autonomous vehicles, and industrial automation systems." },
+        { "@type": "DefinedTerm", "name": "Spiking neural network (SNN)", "description": "A neural network model in which neurons communicate through discrete events (spikes) over time rather than continuous activation values, closely mirroring biological neural signaling." },
+        { "@type": "DefinedTerm", "name": "ERN-AI (Evolutionary, Reconfigurable, Neuromorphic-AI)", "description": "NuMorph AI's overarching architecture paradigm: neuromorphic AI systems that are evolvable and reconfigurable in real time, built from the ALB and NESA components." },
+        { "@type": "DefinedTerm", "name": "ALB (AI-Lego-Block)", "description": "NuMorph AI's atomic neuromorphic processing unit, derived from honeybee visual neurology, composable into arrays." },
+        { "@type": "DefinedTerm", "name": "NESA (Neuromorphic Edge Sensing Array)", "description": "NuMorph AI's vision sensing array architecture, organizing ALB arrays into a layered structure that is reconfigurable in real time." },
+        { "@type": "DefinedTerm", "name": "SWaP (Size, Weight, and Power)", "description": "A combined design metric used to evaluate hardware suitability for edge and embedded deployment, where minimizing physical footprint, mass, and energy consumption is critical." },
+        { "@type": "DefinedTerm", "name": "LLM / LVM (Large Language Model / Large Vision Model)", "description": "Large-scale neural models trained on text (LLM) or visual data (LVM) to perform general-purpose language or vision tasks." },
+        { "@type": "DefinedTerm", "name": "DNN / CNN / RNN", "description": "Common deep learning architectures: DNN (Deep Neural Network) is the general multi-layer form, CNN (Convolutional Neural Network) specializes in spatial data such as images, and RNN (Recurrent Neural Network) handles sequential data through recurrent connections." },
+        { "@type": "DefinedTerm", "name": "FPGA (Field-Programmable Gate Array)", "description": "A reconfigurable integrated circuit whose hardware logic can be reprogrammed after manufacturing, often used for prototyping and low-latency inference." },
+        { "@type": "DefinedTerm", "name": "ASIC (Application-Specific Integrated Circuit)", "description": "A chip custom-designed for a single application, offering higher efficiency and performance than general-purpose hardware at the cost of flexibility." },
+        { "@type": "DefinedTerm", "name": "SLAM (Simultaneous Localization and Mapping)", "description": "A technique enabling a device to build a map of an unknown environment while simultaneously tracking its own position within it." },
+        { "@type": "DefinedTerm", "name": "GPS (Global Positioning System)", "description": "A satellite-based navigation system providing location and time information anywhere with an unobstructed line of sight to the satellites." },
+        { "@type": "DefinedTerm", "name": "ROS (Robot Operating System)", "description": "An open-source middleware framework providing tools and libraries for building and controlling robotic systems." },
+        { "@type": "DefinedTerm", "name": "RADAR (Radio Detection And Ranging)", "description": "A sensing method using radio waves to detect the distance, speed, and direction of objects, commonly used in automotive and physical-AI systems." }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+        { "@type": "ListItem", "position": 2, "name": "Glossary", "item": "glossary" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div style="max-width:100%;overflow-x:hidden">
+<div id="nm-progress"></div>
+<nav id="nm-nav">
+  <a href="index.html" style="display:flex;align-items:center">
+    <img src="assets/logo.webp" alt="NuMorph AI — Bee the Future" style="height:46px;width:auto;display:block">
+  </a>
+  <div class="nm-nav-inline">
+<div class="nm-dropdown">
+      <a href="company.html">Company</a>
+      <div class="nm-dropdown-menu">
+        <a href="company.html#about">About</a>
+        <a href="company.html#team">Team</a>
+        <a href="company.html#roadmap">Roadmap</a>
+      </div>
+    </div>
+    <div class="nm-dropdown">
+      <a href="technology.html">Technology</a>
+      <div class="nm-dropdown-menu">
+        <a href="technology.html#the-problem">The Problem</a>
+        <a href="technology.html#ern-ai">ERN-AI</a>
+        <a href="technology.html#how-it-works">How It Works</a>
+        <a href="technology.html#poc-results">PoC Results</a>
+      </div>
+    </div>
+    <div class="nm-dropdown">
+      <a href="solutions.html">Solutions</a>
+      <div class="nm-dropdown-menu">
+        <a href="solutions.html#factory-automation">Factory Automation</a>
+        <a href="solutions.html#machine-inspection">Machine Inspection</a>
+        <a href="solutions.html#warehouse-robotics">Warehouse Robotics</a>
+        <a href="solutions.html#smart-manufacturing">Smart Manufacturing</a>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a href="index.html#contact" class="nm-cta">Request a briefing</a>
+    <button class="nm-nav-toggle" type="button" aria-label="Open full menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nm-nav-links">
+    <a href="company.html">Company</a>
+    <a href="company.html#about">About</a>
+    <a href="company.html#team">Team</a>
+    <a href="company.html#roadmap">Roadmap</a>
+    <a href="technology.html">Technology</a>
+    <a href="technology.html#the-problem" class="nm-fm-sub">The Problem</a>
+    <a href="technology.html#ern-ai" class="nm-fm-sub">ERN-AI</a>
+    <a href="technology.html#how-it-works" class="nm-fm-sub">How It Works</a>
+    <a href="technology.html#poc-results" class="nm-fm-sub">PoC Results</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="solutions.html#factory-automation" class="nm-fm-sub">Factory Automation</a>
+    <a href="solutions.html#machine-inspection" class="nm-fm-sub">Machine Inspection</a>
+    <a href="solutions.html#warehouse-robotics" class="nm-fm-sub">Warehouse Robotics</a>
+    <a href="solutions.html#smart-manufacturing" class="nm-fm-sub">Smart Manufacturing</a>
+    <a href="blog.html#newsletter">Newsletter</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="careers.html">Careers</a>
+    <a href="index.html#contact" class="nm-cta">Request a briefing</a>
+  </div>
+</nav>
+
+<header style="position:relative;padding:78px 40px 54px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="position:absolute;inset:0;background:radial-gradient(90% 120% at 85% 0,rgba(16,99,194,.18),transparent 55%);pointer-events:none"></div>
+  <div style="position:relative;max-width:1000px;margin:0 auto">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.14em;font-weight:700;color:#8fc0ff;margin-bottom:16px">GLOSSARY</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;line-height:1.06;letter-spacing:-.03em;margin:0">Core Terms</h1>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;color:#7a8699;margin:16px 0 0">By the NuMorph AI Team</div>
+  </div>
+</header>
+
+<main style="max-width:900px;margin:0 auto;padding:56px 40px 80px">
+  <p style="font-size:16px;line-height:1.65;color:#98a3b4;margin:0 0 8px;max-width:760px">The words NuMorph uses — ERN-AI, ALB, NESA — connect to the terms the market actually searches: low-power AI, edge inference, event-driven vision. This glossary bridges the two.</p>
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;letter-spacing:.14em;color:#f0b429;margin:44px 0 0">CORE TERMS</div>
+  <dl style="margin:0;display:flex;flex-direction:column;gap:0">
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Neuromorphic computing</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">Computing architectures modeled on the structure and behavior of biological nervous systems, typically characterized by event-driven processing, sparse activation, and very low power consumption relative to conventional von Neumann architectures.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Event-driven vision</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A sensing paradigm in which visual data is generated only when the scene changes, rather than captured at a fixed frame rate. Data volume scales with scene activity instead of with time.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Frame-based vision</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">The conventional imaging paradigm in which a sensor captures complete images at a fixed rate regardless of scene content, producing substantial redundancy in static or slow-changing scenes.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Analog AI</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">AI computation performed using analog physical quantities rather than discrete digital arithmetic, typically achieving significantly lower energy per operation for suitable workloads.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Edge inference</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">Running AI model inference on or near the sensor rather than transmitting data to a centralized server or cloud, reducing latency and bandwidth requirements.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Perception-native AI</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">AI architecture in which perception processing is structured around the sensing modality itself rather than adapting general-purpose models to sensor output after the fact.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Physical AI</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">AI systems that perceive and act in the physical world, including robots, drones, autonomous vehicles, and industrial automation systems.</dd>
+    </div>
+    <div style="padding:26px 0">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">Spiking neural network (SNN)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A neural network model in which neurons communicate through discrete events (spikes) over time rather than continuous activation values, closely mirroring biological neural signaling.</dd>
+    </div>
+  </dl>
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;letter-spacing:.14em;color:#f0b429;margin:44px 0 0">NUMORPH AI PROPRIETARY ARCHITECTURE</div>
+  <dl style="margin:0;display:flex;flex-direction:column;gap:0">
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">ERN-AI (Evolutionary, Reconfigurable, Neuromorphic-AI)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">NuMorph AI's overarching architecture paradigm: neuromorphic AI systems that are evolvable and reconfigurable in real time, built from the ALB and NESA components.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">ALB (AI-Lego-Block)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">NuMorph AI's atomic neuromorphic processing unit, derived from honeybee visual neurology, composable into arrays.</dd>
+    </div>
+    <div style="padding:26px 0">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">NESA (Neuromorphic Edge Sensing Array)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">NuMorph AI's vision sensing array architecture, organizing ALB arrays into a layered structure that is reconfigurable in real time.</dd>
+    </div>
+  </dl>
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;letter-spacing:.14em;color:#f0b429;margin:44px 0 0">ABBREVIATIONS &amp; RELATED TECHNOLOGY</div>
+  <dl style="margin:0;display:flex;flex-direction:column;gap:0">
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">SWaP (Size, Weight, and Power)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A combined design metric used to evaluate hardware suitability for edge and embedded deployment, where minimizing physical footprint, mass, and energy consumption is critical.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">LLM / LVM (Large Language Model / Large Vision Model)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">Large-scale neural models trained on text (LLM) or visual data (LVM) to perform general-purpose language or vision tasks.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">DNN / CNN / RNN</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">Common deep learning architectures: DNN (Deep Neural Network) is the general multi-layer form, CNN (Convolutional Neural Network) specializes in spatial data such as images, and RNN (Recurrent Neural Network) handles sequential data through recurrent connections.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">FPGA (Field-Programmable Gate Array)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A reconfigurable integrated circuit whose hardware logic can be reprogrammed after manufacturing, often used for prototyping and low-latency inference.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">ASIC (Application-Specific Integrated Circuit)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A chip custom-designed for a single application, offering higher efficiency and performance than general-purpose hardware at the cost of flexibility.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">SLAM (Simultaneous Localization and Mapping)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A technique enabling a device to build a map of an unknown environment while simultaneously tracking its own position within it.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">GPS (Global Positioning System)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A satellite-based navigation system providing location and time information anywhere with an unobstructed line of sight to the satellites.</dd>
+    </div>
+    <div style="padding:26px 0;border-bottom:1px solid rgba(255,255,255,.08)">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">ROS (Robot Operating System)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">An open-source middleware framework providing tools and libraries for building and controlling robotic systems.</dd>
+    </div>
+    <div style="padding:26px 0">
+      <dt style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px;color:#fff;margin-bottom:8px">RADAR (Radio Detection And Ranging)</dt>
+      <dd style="margin:0;font-size:16px;line-height:1.65;color:#aeb8c7">A sensing method using radio waves to detect the distance, speed, and direction of objects, commonly used in automotive and physical-AI systems.</dd>
+    </div>
+  </dl>
+</main>
+
+<footer style="border-top:1px solid rgba(255,255,255,.06);padding:48px 40px 44px;background:#080b11">
+  <div class="nm-footer-grid" style="max-width:1240px;margin:0 auto">
+    <div>
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+        <img src="assets/logo.webp" alt="NuMorph AI" style="height:40px;width:auto;display:block">
+      </div>
+      <p style="font-size:13.5px;line-height:1.6;color:#7f8a9b;margin:0 0 14px;max-width:280px">Neuromorphic analog-AI software for autonomous vision sensing at the edge.</p>
+      <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:#98a3b4;margin-bottom:18px">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="#7f8a9b" aria-hidden="true"><path d="M12 2C7.86 2 4.5 5.36 4.5 9.5c0 5.5 7.5 12.5 7.5 12.5s7.5-7 7.5-12.5C19.5 5.36 16.14 2 12 2zm0 10a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        San Jose, California, USA
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="https://www.linkedin.com/company/numorph-ai-inc/posts/?feedView=all" target="_blank" rel="noopener" class="nm-social" aria-label="NuMorph AI on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg></a>
+        <a href="index.html#contact" class="nm-contact-btn">Contact us</a>
+      </div>
+    </div>
+    <div>
+      <a href="technology.html" class="nm-footer-head" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;margin-bottom:14px">TECHNOLOGY</a>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="technology.html#the-problem" style="color:#aeb8c7">The Problem</a>
+        <a href="technology.html#ern-ai" style="color:#aeb8c7">ERN-AI</a>
+        <a href="technology.html#how-it-works" style="color:#aeb8c7">How It Works</a>
+        <a href="technology.html#poc-results" style="color:#aeb8c7">PoC Results</a>
+      </div>
+    </div>
+    <div>
+      <a href="solutions.html" class="nm-footer-head" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;margin-bottom:14px">SOLUTIONS</a>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="solutions.html#factory-automation" style="color:#aeb8c7">Factory Automation</a>
+        <a href="solutions.html#machine-inspection" style="color:#aeb8c7">Machine Inspection</a>
+        <a href="solutions.html#warehouse-robotics" style="color:#aeb8c7">Warehouse Robotics</a>
+        <a href="solutions.html#smart-manufacturing" style="color:#aeb8c7">Smart Manufacturing</a>
+      </div>
+    </div>
+    <div>
+      <a href="company.html" class="nm-footer-head" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;margin-bottom:14px">COMPANY</a>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="company.html#about" style="color:#aeb8c7">About</a>
+        <a href="company.html#team" style="color:#aeb8c7">Team</a>
+        <a href="company.html#roadmap" style="color:#aeb8c7">Roadmap</a>
+        <a href="careers.html" style="color:#aeb8c7">Careers</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#5f6a7b;margin-bottom:14px">RESOURCES</div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="blog.html#newsletter" style="color:#aeb8c7">Newsletter</a>
+        <a href="blog.html" style="color:#aeb8c7">Blog</a>
+        <a href="faq.html" style="color:#aeb8c7">FAQ</a>
+        <a href="glossary.html" style="color:#aeb8c7">Glossary</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:36px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);text-align:center">
+    <div style="font-size:12.5px;color:#5f6a7b">© 2026 NuMorph AI Inc. — All Rights Reserved.</div>
+  </div>
+</footer>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

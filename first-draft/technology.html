@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How ERN-AI Works — Neuromorphic Vision Technology</title>
+<meta name="description" content="ERN-AI: the problem with frame-based sensing, what ERN-AI and AI-Lego-Blocks are, how the pipeline works, and measured proof-of-concept results.">
+<meta name="author" content="Dr. Deepak Srivastava">
+<link rel="canonical" href="https://numorph.ai/technology">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NuMorph AI">
+<meta property="og:title" content="How ERN-AI Works — Neuromorphic Vision Technology">
+<meta property="og:description" content="ERN-AI: the problem with frame-based sensing, what ERN-AI and AI-Lego-Blocks are, how the pipeline works, and measured proof-of-concept results.">
+<meta property="og:url" content="https://numorph.ai/technology">
+<meta property="og:image" content="https://numorph.ai/assets/bio-hexagons.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How ERN-AI Works — Neuromorphic Vision Technology">
+<meta name="twitter:description" content="ERN-AI: the problem with frame-based sensing, what ERN-AI and AI-Lego-Blocks are, how the pipeline works, and measured proof-of-concept results.">
+<meta name="twitter:image" content="https://numorph.ai/assets/bio-hexagons.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://numorph.ai/technology#webpage",
+      "url": "https://numorph.ai/technology",
+      "name": "How ERN-AI Works \u2014 Neuromorphic Vision Technology",
+      "description": "ERN-AI: the problem with frame-based sensing, what ERN-AI and AI-Lego-Blocks are, how the pipeline works, and measured proof-of-concept results.",
+      "isPartOf": {
+        "@id": "/#website"
+      },
+      "inLanguage": "en-US",
+      "author": { "@type": "Person", "name": "Dr. Deepak Srivastava", "jobTitle": "Founder, CEO & Chief Technologist", "url": "https://www.linkedin.com/in/deepak-s-0767a16/" },
+      "publisher": {
+        "@id": "/#organization"
+      },
+      "dateModified": "2026-08-11"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ERN-AI",
+      "alternateName": "Evolutionary, Reconfigurable, Neuromorphic AI",
+      "applicationCategory": "Neuromorphic edge-vision software",
+      "operatingSystem": "Digital CMOS camera infrastructure",
+      "description": "ERN-AI (Evolutionary, Reconfigurable, Neuromorphic AI) is NuMorph AI's patent-pending software built from AI-Lego-Blocks (ALB) modeled on honeybee neurology, composed into NESA sensing arrays.",
+      "creator": { "@type": "Organization", "name": "NuMorph AI Inc." }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "NuMorphAi Demo of AI Lego Blocks Operating in an Array",
+      "description": "NuMorph AI demonstrates massively modular, evolutionarily reconfigurable neuromorphic ERN-AI software — inspired by the honeybee's vision system — for edge and extreme-edge applications.",
+      "thumbnailUrl": "assets/cloud-city.webp",
+      "embedUrl": "https://www.youtube.com/embed/Zf_D_aHTqho",
+      "uploadDate": "2026-06-05",
+      "duration": "PT2M5S",
+      "transcript": "Welcome to NuMorph AI. Current big AI models are not suitable for edge or extreme edge. NuMorph AI introduces massively modular evolutionary reconfigurable neuromorphic ERN-AI software from the neurology of honeybee's vision system. Highly efficient individual small data trained analog AI modules or AI Lego blocks are developed. ERN-AI software is a real-time configuration of many such AI Lego blocks for a given application. Like the building blocks or bricks of a building, ERN-AI Lego blocks are build them once, use them again and again for different applications. For example, event driven and selective cameras. Event-driven safety and security monitoring, day and night, rain or shine. ERN-AI software for motion detection and classification day or night with no IR sensors. For example, ERN-AI software for event driven sensing, alarm and recording, day or night, rain or shine. ERN-AI software for 3x3 AI Lego block array or neuromorphic edge sensing arrays analysis of a higher resolution video analysis for motion detection classification changing the resolution and focusing of a video analysis using AI Lego blocks array configurations. The various arrays show the capabilities of neuromorphic AI analysis of HD resolutions without increasing the workload. Here is the compute load saving in the training and inference of a 10x10 AI Lego blocks array configuration. The overall compute load or energy saving in both cases is around 500 times better using our current level code and compute infrastructure. ERN-AI software is compatible with current digital camera technologies. ERN-AI software is ready for next-gen neuromorphic camera technologies. NuMorph AI. Bee the Future. We are here.",
+      "author": { "@type": "Organization", "name": "NuMorph AI Inc." },
+      "publisher": { "@type": "Organization", "name": "NuMorph AI Inc." }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+        { "@type": "ListItem", "position": 2, "name": "Technology", "item": "technology" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div style="max-width:100%;overflow-x:hidden">
+<div id="nm-progress"></div>
+<nav id="nm-nav">
+  <a href="index.html" style="display:flex;align-items:center">
+    <img src="assets/logo.webp?v=7" alt="NuMorph AI — Bee the Future" style="height:46px;width:auto;display:block">
+  </a>
+  <div class="nm-nav-inline">
+<div class="nm-dropdown">
+      <a href="company.html">Company</a>
+      <div class="nm-dropdown-menu">
+        <a href="company.html#about">About</a>
+        <a href="company.html#team">Team</a>
+        <a href="company.html#roadmap">Roadmap</a>
+      </div>
+    </div>
+    <div class="nm-dropdown">
+      <a href="technology.html">Technology</a>
+      <div class="nm-dropdown-menu">
+        <a href="technology.html#the-problem">The Problem</a>
+        <a href="technology.html#ern-ai">ERN-AI</a>
+        <a href="technology.html#how-it-works">How It Works</a>
+        <a href="technology.html#poc-results">PoC Results</a>
+      </div>
+    </div>
+    <div class="nm-dropdown">
+      <a href="solutions.html">Solutions</a>
+      <div class="nm-dropdown-menu">
+        <a href="solutions.html#factory-automation">Factory Automation</a>
+        <a href="solutions.html#machine-inspection">Machine Inspection</a>
+        <a href="solutions.html#warehouse-robotics">Warehouse Robotics</a>
+        <a href="solutions.html#smart-manufacturing">Smart Manufacturing</a>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a href="index.html#contact" class="nm-cta">Request a briefing</a>
+    <button class="nm-nav-toggle" type="button" aria-label="Open full menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nm-nav-links">
+    <a href="company.html">Company</a>
+    <a href="company.html#about">About</a>
+    <a href="company.html#team">Team</a>
+    <a href="company.html#roadmap">Roadmap</a>
+    <a href="technology.html">Technology</a>
+    <a href="technology.html#the-problem" class="nm-fm-sub">The Problem</a>
+    <a href="technology.html#ern-ai" class="nm-fm-sub">ERN-AI</a>
+    <a href="technology.html#how-it-works" class="nm-fm-sub">How It Works</a>
+    <a href="technology.html#poc-results" class="nm-fm-sub">PoC Results</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="solutions.html#factory-automation" class="nm-fm-sub">Factory Automation</a>
+    <a href="solutions.html#machine-inspection" class="nm-fm-sub">Machine Inspection</a>
+    <a href="solutions.html#warehouse-robotics" class="nm-fm-sub">Warehouse Robotics</a>
+    <a href="solutions.html#smart-manufacturing" class="nm-fm-sub">Smart Manufacturing</a>
+    <a href="blog.html#newsletter">Newsletter</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="careers.html">Careers</a>
+    <a href="index.html#contact" class="nm-cta">Request a briefing</a>
+  </div>
+</nav>
+
+<header style="position:relative;padding:78px 40px 54px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="position:absolute;inset:0;background:radial-gradient(90% 120% at 85% 0,rgba(16,99,194,.18),transparent 55%);pointer-events:none"></div>
+  <div style="position:relative;max-width:1000px;margin:0 auto">
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;line-height:1.06;letter-spacing:-.03em;margin:0 0 22px">How ERN-AI Works</h1>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;color:#7a8699;margin:0 0 16px">By Dr. Deepak Srivastava, Founder, CEO &amp; Chief Technologist</div>
+    <p style="font-size:18px;line-height:1.65;color:#b6c0d0;max-width:760px;margin:0 0 28px">Why frame-based sensing is broken, what ERN-AI and AI-Lego-Blocks are, how the pipeline fits onto your existing cameras, and the proof-of-concept results measured so far.</p>
+    </div>
+</header>
+
+<main style="max-width:1000px;margin:0 auto;padding:64px 40px 0">
+
+  <section id="the-problem" style="scroll-margin-top:90px;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,.06)">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;letter-spacing:-.02em;margin:0 0 20px;line-height:1.15">The Problem: Sensing Data Is Broken</h2>
+    <p style="font-size:17px;line-height:1.65;color:#b6c0d0;max-width:760px;margin:0 0 14px">Autonomous physical-AI systems generate enormous volumes of perception sensing data — yet over <strong style="color:#e9edf4;font-weight:600">95% of it is redundant.</strong></p>
+    <p style="font-size:16px;line-height:1.65;color:#98a3b4;max-width:760px;margin:0 0 32px">A frame-based camera running at 30 frames per second in a static warehouse aisle transmits thirty nearly identical images every second. The information content changes only when something moves. Everything else is duplicated pixels consuming bandwidth, inference cycles, and disk.</p>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:0 0 22px;line-height:1.15">Three Compounding Failures</h3>
+    <div style="display:grid;grid-template-columns:1fr;gap:18px">
+      <div style="padding:26px 30px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px;color:#fff">Redundant data</h4>
+        <p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">Frame-based cameras capture the entire scene at a fixed rate regardless of whether anything in that scene has changed. Redundancy is designed into the capture model itself.</p>
+      </div>
+      <div style="padding:26px 30px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px;color:#fff">Bandwidth overload</h4>
+        <p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">A mid-sized industrial site runs hundreds to thousands of simultaneous video feeds. Aggregate throughput scales linearly with camera count, and network capacity becomes the binding constraint long before analytical capability does.</p>
+      </div>
+      <div style="padding:26px 30px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 8px;color:#fff">AI compute and storage cost</h4>
+        <p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">Every redundant frame that reaches a GPU is paid for twice — once in inference cost and once in storage. This is the primary driver of poor ROI and slow response times in large-scale vision deployments.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:40px 0 16px;line-height:1.15">An Architectural Flaw, Not a Bug</h3>
+    <p style="font-size:16px;line-height:1.65;color:#b6c0d0;margin:0 0 14px">This cannot be solved by compression, better models, or more GPUs. Compression reduces the cost of moving redundant data but does not eliminate the redundancy. Larger models increase the cost per frame. Adding compute scales the expense linearly with the problem.</p>
+    <p style="font-size:17px;line-height:1.6;color:#ffd561;font-weight:700;margin:0 0 24px">The redundancy originates at the point of capture, which is where it has to be removed.</p>
+    </section>
+
+  <section id="ern-ai" style="scroll-margin-top:90px;padding:64px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;letter-spacing:-.02em;margin:0 0 20px;line-height:1.15">ERN-AI: Perception-Native Software with AI-Lego-Blocks</h2>
+    <p style="font-size:17px;line-height:1.65;color:#b6c0d0;max-width:820px;margin:0 0 32px">ERN-AI (Evolutionary, Reconfigurable, Neuromorphic AI) is NuMorph AI's patent-pending core software. It is a perception-native compute layer that sits between the sensor and the downstream AI stack, converting continuous frame data into sparse event representations before that data ever reaches the network or the GPU.</p>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:0 0 16px;line-height:1.15">What Is an AI-Lego-Block (ALB)?</h3>
+    <p style="font-size:16px;line-height:1.65;color:#b6c0d0;margin:0 0 24px;max-width:820px">An AI-Lego-Block, or ALB, is the atomic unit of ERN-AI. Each ALB is a micro-scale neuromorphic processing element developed from the neurology of honeybees, whose visual systems perform sophisticated motion detection, navigation, and classification on a brain of roughly one million neurons and a power budget measured in microwatts.</p>
+    <div style="border-radius:18px;overflow:hidden;margin-bottom:28px;padding:8px;max-width:540px;margin-left:auto;margin-right:auto"><img src="assets/bee-lego-blocks.webp?v=7" alt="AI-Lego-Block (ALB): honeybee placing modular red and blue blocks onto a 3x3 ALB array" style="width:100%;height:auto;display:block" loading="lazy" width="567" height="452"></div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:40px 0 16px;line-height:1.15">How ALBs Compose into ERN-AI Software</h3>
+    <p style="font-size:16px;line-height:1.65;color:#b6c0d0;margin:0 0 22px;max-width:820px">ERN-AI software is assembled from arrays of ALBs, configured to the requirements of the deployment. The composition is modular, scalable, distributed, and decentralized — there is no central inference bottleneck, and array size can be matched to the complexity of the scene rather than fixed at design time.</p>
+    <div style="border-radius:18px;overflow:hidden;margin-bottom:26px;padding:8px"><img src="assets/alb-ern-ai-nesa.webp?v=7" alt="How ALBs combine into Modular ERN-AI Software to form the Neuromorphic Edge Sensing Array (NESA)" style="width:100%;height:auto;display:block" loading="lazy" width="912" height="477"></div>
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:40px 0 16px;line-height:1.15">What Is NESA?</h3>
+    <p style="font-size:16px;line-height:1.65;color:#b6c0d0;margin:0 0 32px;max-width:820px">NESA (Neuromorphic Edge Sensing Array) is NuMorph's vision sensing array architecture. It organizes ALB arrays into a layered sensing structure that is evolutionary and reconfigurable in real time — the array can restructure its own processing topology as scene conditions change, without redeployment or retraining.</p>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:0 0 16px;line-height:1.15">Intellectual Property Status</h3>
+    <div style="padding:26px 30px;border:1px solid rgba(240,180,41,.28);border-radius:16px;background:linear-gradient(180deg,rgba(240,180,41,.06),transparent)">
+      <p style="font-size:16px;line-height:1.65;color:#c8d0dc;margin:0">ERN-AI is <strong style="color:#ffd561;font-weight:700">patent pending.</strong> Proof-of-concept demonstrations have been completed and are available for review under NDA.</p>
+    </div>
+  </section>
+
+  <section id="how-it-works" style="scroll-margin-top:90px;padding:64px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;letter-spacing:-.02em;margin:0 0 16px;line-height:1.15">How ERN-AI Works</h2>
+    <p style="font-size:17px;line-height:1.65;color:#b6c0d0;max-width:760px;margin:0 0 32px">ERN-AI does not replace the imaging pipeline. It inserts two stages into it.</p>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;gap:20px;padding:26px 28px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <div style="flex:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#5f6a7b;width:30px">01</div>
+        <div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 6px;color:#fff">Current tech: CMOS digital capture</h4><p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">The existing camera captures frames exactly as it does today. No hardware change, no firmware replacement, no recalibration.</p></div>
+      </div>
+      <div style="display:flex;gap:20px;padding:26px 28px;border:1px solid rgba(240,180,41,.28);border-radius:16px;background:linear-gradient(180deg,rgba(240,180,41,.05),transparent)">
+        <div style="flex:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#f0b429;width:30px">02</div>
+        <div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 6px;color:#fff">Digital-analog event extraction</h4><p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">Incoming frames are converted from a dense frame representation into a sparse event representation. Only changes in the scene generate events; static regions generate nothing.</p></div>
+      </div>
+      <div style="display:flex;gap:20px;padding:26px 28px;border:1px solid rgba(77,155,255,.3);border-radius:16px;background:linear-gradient(180deg,rgba(16,99,194,.08),transparent)">
+        <div style="flex:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#4d9bff;width:30px">03</div>
+        <div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 6px;color:#fff">ERN-AI software with AI-Lego-Blocks</h4><p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">The ALB array processes the event stream directly. Motion detection, classification, and scene interpretation happen here, at the edge, on the event data rather than on full frames.</p></div>
+      </div>
+      <div style="display:flex;gap:20px;padding:26px 28px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <div style="flex:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#5f6a7b;width:30px">04</div>
+        <div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 6px;color:#fff">Reduced compute load</h4><p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">Downstream inference operates on a fraction of the original data volume. In tested 10×10 ALB array configurations, NuMorph measured approximately <strong style="color:#fff;font-weight:600">500× compute load reduction.</strong></p></div>
+      </div>
+      <div style="display:flex;gap:20px;padding:26px 28px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <div style="flex:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#5f6a7b;width:30px">05</div>
+        <div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:0 0 6px;color:#fff">Reduced bandwidth</h4><p style="font-size:15px;line-height:1.6;color:#aeb8c7;margin:0">Only events and derived results travel across the network. Raw video no longer needs to be transmitted or stored by default.</p></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:40px 0 14px;line-height:1.15">No Change to Your Hardware Stack</h3>
+    <p style="font-size:16px;line-height:1.65;color:#b6c0d0;margin:0 0 24px;max-width:820px">There is no requirement for any other change in the current digital CMOS hardware stack. ERN-AI is compatible with the cameras already installed and remains compatible with future neuromorphic sensing hardware as it becomes available.</p>
+    </section>
+
+  <section id="poc-results" style="scroll-margin-top:90px;padding:64px 0 0">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;letter-spacing:-.02em;margin:0 0 16px;line-height:1.15">ERN-AI Proof-of-Concept Results</h2>
+    <p style="font-size:17px;line-height:1.6;color:#b6c0d0;max-width:760px;margin:0 0 32px">NuMorph has completed proof-of-concept demonstrations of ERN-AI software. The following results are <strong style="color:#e9edf4;font-weight:600">measured, not modeled.</strong></p>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:0 0 22px;line-height:1.15">Verified Capabilities</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+      <div style="padding:26px 28px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 8px;color:#fff">Works with current &amp; future sensing tech</h4>
+        <p style="font-size:14.5px;line-height:1.6;color:#aeb8c7;margin:0">ERN-AI operates on conventional digital CMOS camera output today and is architecturally compatible with neuromorphic sensors as they reach the market.</p>
+      </div>
+      <div style="padding:26px 28px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 8px;color:#fff">Motion detection in low light</h4>
+        <p style="font-size:14.5px;line-height:1.6;color:#aeb8c7;margin:0">Event-driven motion detection and classification in daylight and below 5 lux, without infrared illumination or IR sensors — removing both the hardware cost and the deployment visibility of IR arrays.</p>
+      </div>
+      <div style="padding:26px 28px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:#0d1119">
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 8px;color:#fff">Validated across five configurations</h4>
+        <p style="font-size:14.5px;line-height:1.6;color:#aeb8c7;margin:0">Testing covered 1×1, 3×3, 5×5, 7×7, and 10×10 ALB-array configurations.</p>
+      </div>
+      <div style="padding:26px 28px;border:1px solid rgba(240,180,41,.3);border-radius:16px;background:linear-gradient(180deg,rgba(240,180,41,.06),transparent)">
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:0 0 8px;color:#fff">~500× compute load reduction</h4>
+        <p style="font-size:14.5px;line-height:1.6;color:#aeb8c7;margin:0">At the 10×10 ALB array configuration, ERN-AI demonstrated approximately 500× reduction in compute load relative to frame-based processing of the same input.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin:40px 0 20px;line-height:1.15">Test Summary</h3>
+    <div style="border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:15px">
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:14px 22px;color:#98a3b4;width:55%">Array configurations tested</td><td style="padding:14px 22px;color:#e9edf4;font-family:'IBM Plex Mono',monospace">1×1, 3×3, 5×5, 7×7, 10×10</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.015)"><td style="padding:14px 22px;color:#98a3b4">Compute load reduction (10×10)</td><td style="padding:14px 22px;color:#ffd561;font-weight:700;font-family:'IBM Plex Mono',monospace">~500×</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:14px 22px;color:#98a3b4">Minimum illumination</td><td style="padding:14px 22px;color:#e9edf4;font-family:'IBM Plex Mono',monospace">&lt; 5 lux</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.015)"><td style="padding:14px 22px;color:#98a3b4">IR sensors required</td><td style="padding:14px 22px;color:#e9edf4;font-family:'IBM Plex Mono',monospace">None</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.06)"><td style="padding:14px 22px;color:#98a3b4">Input source</td><td style="padding:14px 22px;color:#e9edf4;font-family:'IBM Plex Mono',monospace">Standard video camera</td></tr>
+          <tr style="background:rgba(255,255,255,.015)"><td style="padding:14px 22px;color:#98a3b4">Demo available</td><td style="padding:14px 22px;color:#4d9bff;font-family:'IBM Plex Mono',monospace;font-weight:500">Yes — video, on request</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:15px;line-height:1.65;color:#98a3b4;margin:26px 0 18px;max-width:820px">A demonstration video showing ERN-AI AI-Lego-Block arrays in operation, from 3×3 up to 10×10 configurations, is available.</p>
+    <div style="max-width:900px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1)">
+      <iframe src="https://www.youtube.com/embed/Zf_D_aHTqho" style="width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="NuMorphAi Demo of AI Lego Blocks Operating in an Array"></iframe>
+    </div>
+    <details style="max-width:900px;margin:22px 0 0;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;background:#0d1119">
+      <summary style="cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;color:#c8d0dc">Video transcript</summary>
+      <p style="font-size:14px;line-height:1.7;color:#98a3b4;margin:14px 0 0">Welcome to NuMorph AI. Current big AI models are not suitable for edge or extreme edge. NuMorph AI introduces massively modular evolutionary reconfigurable neuromorphic ERN-AI software from the neurology of honeybee's vision system. Highly efficient individual small data trained analog AI modules or AI Lego blocks are developed. ERN-AI software is a real-time configuration of many such AI Lego blocks for a given application. Like the building blocks or bricks of a building, ERN-AI Lego blocks are build them once, use them again and again for different applications. For example, event driven and selective cameras. Event-driven safety and security monitoring, day and night, rain or shine. ERN-AI software for motion detection and classification day or night with no IR sensors. For example, ERN-AI software for event driven sensing, alarm and recording, day or night, rain or shine. ERN-AI software for 3x3 AI Lego block array or neuromorphic edge sensing arrays analysis of a higher resolution video analysis for motion detection classification changing the resolution and focusing of a video analysis using AI Lego blocks array configurations. The various arrays show the capabilities of neuromorphic AI analysis of HD resolutions without increasing the workload. Here is the compute load saving in the training and inference of a 10x10 AI Lego blocks array configuration. The overall compute load or energy saving in both cases is around 500 times better using our current level code and compute infrastructure. ERN-AI software is compatible with current digital camera technologies. ERN-AI software is ready for next-gen neuromorphic camera technologies. NuMorph AI. Bee the Future. We are here.</p>
+    </details>
+  </section>
+
+  <div style="margin:56px 0 80px;padding:32px 36px;border:1px solid rgba(77,155,255,.3);border-radius:18px;background:linear-gradient(135deg,rgba(16,99,194,.14),transparent);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div style="font-size:18px;font-family:'Space Grotesk',sans-serif;font-weight:600;color:#fff">Talk to us about a deployment.</div>
+    <a href="index.html#contact" style="display:inline-flex;padding:14px 24px;background:#1063C2;color:#fff;font-weight:600;font-size:15px;border-radius:10px;white-space:nowrap">Request a briefing →</a>
+  </div>
+</main>
+
+<footer style="border-top:1px solid rgba(255,255,255,.06);padding:48px 40px 44px;background:#080b11">
+  <div class="nm-footer-grid" style="max-width:1240px;margin:0 auto">
+    <div>
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+        <img src="assets/logo.webp?v=7" alt="NuMorph AI" style="height:40px;width:auto;display:block">
+      </div>
+      <p style="font-size:13.5px;line-height:1.6;color:#7f8a9b;margin:0 0 14px;max-width:280px">Neuromorphic analog-AI software for autonomous vision sensing at the edge.</p>
+      <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:#98a3b4;margin-bottom:18px">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="#7f8a9b" aria-hidden="true"><path d="M12 2C7.86 2 4.5 5.36 4.5 9.5c0 5.5 7.5 12.5 7.5 12.5s7.5-7 7.5-12.5C19.5 5.36 16.14 2 12 2zm0 10a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        San Jose, California, USA
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="https://www.linkedin.com/company/numorph-ai-inc/posts/?feedView=all" target="_blank" rel="noopener" class="nm-social" aria-label="NuMorph AI on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg></a>
+        <a href="index.html#contact" class="nm-contact-btn">Contact us</a>
+      </div>
+    </div>
+    <div>
+      <a href="technology.html" class="nm-footer-head" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;margin-bottom:14px">TECHNOLOGY</a>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="technology.html#the-problem" style="color:#aeb8c7">The Problem</a>
+        <a href="technology.html#ern-ai" style="color:#aeb8c7">ERN-AI</a>
+        <a href="technology.html#how-it-works" style="color:#aeb8c7">How It Works</a>
+        <a href="technology.html#poc-results" style="color:#aeb8c7">PoC Results</a>
+      </div>
+    </div>
+    <div>
+      <a href="solutions.html" class="nm-footer-head" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;margin-bottom:14px">SOLUTIONS</a>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="solutions.html#factory-automation" style="color:#aeb8c7">Factory Automation</a>
+        <a href="solutions.html#machine-inspection" style="color:#aeb8c7">Machine Inspection</a>
+        <a href="solutions.html#warehouse-robotics" style="color:#aeb8c7">Warehouse Robotics</a>
+        <a href="solutions.html#smart-manufacturing" style="color:#aeb8c7">Smart Manufacturing</a>
+      </div>
+    </div>
+    <div>
+      <a href="company.html" class="nm-footer-head" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;margin-bottom:14px">COMPANY</a>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="company.html#about" style="color:#aeb8c7">About</a>
+        <a href="company.html#team" style="color:#aeb8c7">Team</a>
+        <a href="company.html#roadmap" style="color:#aeb8c7">Roadmap</a>
+        <a href="careers.html" style="color:#aeb8c7">Careers</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#5f6a7b;margin-bottom:14px">RESOURCES</div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px">
+        <a href="blog.html#newsletter" style="color:#aeb8c7">Newsletter</a>
+        <a href="blog.html" style="color:#aeb8c7">Blog</a>
+        <a href="faq.html" style="color:#aeb8c7">FAQ</a>
+        <a href="glossary.html" style="color:#aeb8c7">Glossary</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:36px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);text-align:center">
+    <div style="font-size:12.5px;color:#5f6a7b">© 2026 NuMorph AI Inc. — All Rights Reserved.</div>
+  </div>
+</footer>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
