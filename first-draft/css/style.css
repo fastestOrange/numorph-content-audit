@@ -38,8 +38,8 @@ img{max-width:100%}
 .nm-dropdown-menu a{display:block;padding:10px 12px;border-radius:8px;font-size:13.5px;white-space:nowrap;color:#c8d0dc}
 .nm-dropdown-menu a:hover{background:rgba(255,255,255,.06);color:#fff}
 
-/* always-on hamburger / full-menu drawer */
-.nm-nav-toggle{display:flex}
+/* hamburger: mobile only (drawer nav below 860px) */
+.nm-nav-toggle{display:none}
 .nm-nav-links{
   position:fixed;top:0;right:0;bottom:0;width:min(86vw,340px);
   display:flex;flex-direction:column;align-items:stretch;gap:2px;
@@ -63,8 +63,9 @@ img{max-width:100%}
 @media (max-width:900px){.nm-footer-grid{grid-template-columns:repeat(2,1fr) !important;row-gap:32px !important}}
 @media (max-width:640px){.nm-footer-grid{grid-template-columns:1fr !important}}
 
-/* card hover states (replaces DC's style-hover pseudo-class) */
-.nm-card:hover{border-color:rgba(77,155,255,.4)}
+/* cards are not clickable; only the link inside them is */
+.nm-card:hover{border-color:rgba(255,255,255,.08)}
+.nm-card a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* form focus states */
 .nm-field:focus{outline:2px solid rgba(77,155,255,.5);outline-offset:1px}
@@ -88,6 +89,7 @@ img{max-width:100%}
 @media (max-width:860px){
   #nm-nav{padding:14px 20px}
   .nm-nav-inline{display:none}
+  .nm-nav-toggle{display:flex}
 }
 
 /* ============ RESPONSIVE LAYOUT (tablet) ============ */
@@ -123,3 +125,28 @@ img{max-width:100%}
   h1,h2,h3{overflow-wrap:break-word}
   header,section,main{min-width:0}
 }
+
+/* compare block (light section): stack on narrow, rotate the arrow */
+@media (max-width:860px){
+  [style*="grid-template-columns:1fr auto 1fr"]{grid-template-columns:1fr !important;gap:14px !important}
+  [style*="grid-template-columns:1fr auto 1fr"] > [aria-hidden="true"]{transform:rotate(90deg);width:auto !important;margin:2px auto}
+}
+
+/* desktop: never leave a drawer stranded open if the viewport widens */
+@media (min-width:861px){
+  .nm-nav-links[data-open="true"]{transform:translateX(100%)}
+  #nm-nav-scrim[data-open="true"]{opacity:0;pointer-events:none}
+}
+
+/* numbered evidence stack: tighten the number gutter on small screens */
+@media (max-width:640px){
+  [style*="grid-template-columns:52px 1fr"]{grid-template-columns:34px 1fr !important;gap:14px !important}
+}
+
+/* acronym disclosure panel (technology page) */
+details > summary{list-style:none}
+details > summary::-webkit-details-marker{display:none}
+details > summary::marker{content:""}
+details > summary:hover{text-decoration:underline;text-underline-offset:3px}
+details[open] > summary span[aria-hidden]{transform:rotate(90deg)}
+details > summary span[aria-hidden]{display:inline-block;transition:transform .18s ease}
