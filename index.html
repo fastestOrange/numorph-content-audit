@@ -17,17 +17,17 @@
       }
       body {
         margin: 0;
-        background: #05070b;
-        color: #e9edf4;
+        background: #dfe4ec;
+        color: #11151b;
         font-family: "IBM Plex Sans", system-ui, sans-serif;
         -webkit-font-smoothing: antialiased;
       }
       a {
-        color: #4d9bff;
+        color: #1063c2;
         text-decoration: none;
       }
       a:hover {
-        color: #7db6ff;
+        color: #0b4a92;
       }
       .wrap {
         max-width: 860px;
@@ -39,12 +39,7 @@
       header {
         padding: 64px 0 0;
       }
-      .kicker {
-        font-size: 15px;
-        color: #7f8a9b;
-        margin-bottom: 14px;
-      }
-      h1 {
+h1 {
         font-family: "Space Grotesk", sans-serif;
         font-weight: 700;
         font-size: 40px;
@@ -52,55 +47,16 @@
         letter-spacing: -0.025em;
         margin: 0 0 22px;
       }
-      .lede {
-        font-size: 17px;
-        line-height: 1.65;
-        color: #b6c0d0;
-        margin: 0 0 16px;
-        max-width: 660px;
-      }
-      .lede:last-of-type {
-        margin-bottom: 0;
-      }
-      .lede strong {
-        color: #e9edf4;
-        font-weight: 600;
-      }
-
-      /* --- the why/what panel --- */
-      .brief {
-        margin: 38px 0 0;
-        padding: 26px 28px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 10px;
-        background: #0b0f16;
-      }
-      .brief h2 {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 21px;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        color: #e9edf4;
-        margin: 0 0 14px;
-      }
-      .brief p {
-        font-size: 15px;
-        line-height: 1.7;
-        color: #aeb8c7;
-        margin: 0 0 12px;
-      }
-      .brief p:last-child {
-        margin-bottom: 0;
-      }
-
-      /* --- steps --- */
+/* --- steps --- */
       .steps-head {
+        color: #0a0d12;
+        margin-top: 46px;
         margin: 56px 0 20px;
         font-family: "Space Grotesk", sans-serif;
         font-size: 21px;
         font-weight: 600;
         letter-spacing: -0.02em;
-        color: #e9edf4;
+        color: #0a0d12;
       }
       ol.steps {
         list-style: none;
@@ -116,9 +72,9 @@
         align-items: center;
         gap: 20px;
         padding: 18px 22px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid #c3cad6;
         border-radius: 10px;
-        background: #0b0f16;
+        background: #ffffff;
       }
       .step-n {
         flex: none;
@@ -131,8 +87,8 @@
         font-family: "IBM Plex Mono", monospace;
         font-size: 12.5px;
         font-weight: 500;
-        color: #98a3b4;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #3a424e;
+        border: 1px solid #c2c8d2;
       }
       /* small preview: deliberately compact so all 5 steps fit on screen */
       .thumb {
@@ -144,30 +100,31 @@
         align-items: center;
         justify-content: center;
         border: 1px solid rgba(255, 255, 255, 0.14);
-        background: #11161f;
+        background: #eaeef3;
         font-size: 12px;
-        color: #7f8a9b;
+        color: #5b6572;
         text-align: center;
         line-height: 1.4;
       }
+      .thumb.doc{font-size:12px;letter-spacing:.06em;color:#3a424e;font-weight:600}
       .thumb.site {
         background:
           linear-gradient(#1b2331 0 4px, transparent 4px),
           linear-gradient(90deg, #141b26 0 38%, transparent 38%), #0e131b;
-        color: #7f8a9b;
+        color: #5b6572;
       }
       .play {
         width: 22px;
         height: 22px;
         border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.28);
+        border: 1px solid #9aa3b0;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       .play::after {
         content: "";
-        border-left: 6px solid rgba(255, 255, 255, 0.5);
+        border-left: 6px solid #5b6572;
         border-top: 4px solid transparent;
         border-bottom: 4px solid transparent;
         margin-left: 2px;
@@ -178,21 +135,21 @@
       }
       .step-kind {
         font-size: 12.5px;
-        color: #5f6a7b;
+        color: #5b6572;
         margin-bottom: 5px;
       }
       .step-title {
         font-family: "Space Grotesk", sans-serif;
         font-weight: 600;
         font-size: 17px;
-        color: #e9edf4;
+        color: #0a0d12;
         margin: 0 0 4px;
         line-height: 1.25;
       }
       .step-desc {
-        font-size: 13.5px;
-        line-height: 1.55;
-        color: #7f8a9b;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #444c58;
         margin: 0;
       }
       .step-act {
@@ -200,24 +157,10 @@
         font-size: 13.5px;
         font-weight: 500;
       }
-      .step-act .pending {
-        color: #5f6a7b;
-        font-size: 13.5px;
-        font-style: italic;
-      }
-      /* a step that is not yet actionable */
-      .step.pending {
-        border-style: dashed;
-        border-color: rgba(255, 255, 255, 0.14);
-      }
-      .step.pending .step-title {
-        color: #98a3b4;
-      }
-
-      footer {
+footer {
         padding: 56px 0 80px;
         font-size: 13px;
-        color: #4b535e;
+        color: #5b6572;
       }
 
       @media (max-width: 640px) {
@@ -250,123 +193,66 @@
   <body>
     <div class="wrap">
       <header>
-        <div class="kicker">NuMorph AI</div>
-        <h1>Website content audit</h1>
-        <p class="lede">
-          A review of numorph.ai's current content, and a proposal for what it
-          should become. Work through the five steps below in order. Each
-          builds on the one before it.
-        </p>
+        <h1>Website Content Audit for www.numorph.ai</h1>
       </header>
 
-      <section class="brief">
-        <p>
-          numorph.ai needs to explain NuMorph's technology and direction to
-          three audiences: licensing partners and customers, investors, and the
-          technically curious. Instead, the writing leans on conventions that
-          signal generated content, the visuals stand in for explanations rather
-          than giving them, and the core ideas arrive buried under acronyms.
-        </p>
-        <p>
-          Rather than edit the existing pages, this audit works from first
-          principles: establish what each section is <em>for</em>, agree on
-          that, and only then write the words and design the page. The steps
-          below follow that order deliberately.
-        </p>
-      </section>
+      <h2 class="steps-head sec-watch">Watch</h2>
+      <ol class="steps sec-watch">
 
-      <h2 class="steps-head">Work through these in order</h2>
-
-      <ol class="steps">
-        <li class="step pending">
+        <li class="step">
           <div class="step-n">1</div>
-          <div class="thumb"><div class="play"></div></div>
+          <a class="thumb" href="https://drive.google.com/file/d/1cGCzc5DFo9i76zfkQn5uKLgs6Pryqqf5/view?usp=sharing" target="_blank" rel="noopener" aria-label="Watch the current website audit"><div class="play"></div></a>
           <div class="step-body">
             <div class="step-kind">Video</div>
             <h3 class="step-title">Audit of the current website</h3>
-            <p class="step-desc">
-              A walkthrough of numorph.ai as it stands today, and what is not
-              working.
-            </p>
+            <p class="step-desc">A walkthrough of numorph.ai as it stands today, and what is not working.</p>
           </div>
-          <!-- VIDEO 1: replace this block's `pending` class and add the embed/link when recorded -->
-          <div class="step-act">
-            <span class="pending">Not yet recorded</span>
-          </div>
-        </li>
-
-        <li class="step pending">
-          <div class="step-n">2</div>
-          <div class="thumb"><div class="play"></div></div>
-          <div class="step-body">
-            <div class="step-kind">Video</div>
-            <h3 class="step-title">Walkthrough of the intentions</h3>
-            <p class="step-desc">
-              What each section of each page is meant to communicate, before any
-              copy is written.
-            </p>
-          </div>
-          <!-- VIDEO 2: replace this block's `pending` class and add the embed/link when recorded -->
-          <div class="step-act">
-            <span class="pending">Not yet recorded</span>
-          </div>
+          <div class="step-act"><a href="https://drive.google.com/file/d/1cGCzc5DFo9i76zfkQn5uKLgs6Pryqqf5/view?usp=sharing" target="_blank" rel="noopener">Watch &#8594;</a></div>
         </li>
 
         <li class="step">
-          <div class="step-n">3</div>
-          <a
-            class="thumb site"
-            href="intentions/index.html"
-            aria-label="Open the intentions site"
-            >Intentions</a
-          >
-          <div class="step-body">
-            <div class="step-kind">Website</div>
-            <h3 class="step-title">The intentions, page by page</h3>
-            <p class="step-desc">
-              Structure only: what each section is for. No copy, no layout, no
-              imagery.
-            </p>
-          </div>
-          <div class="step-act"><a href="intentions/index.html">Open →</a></div>
-        </li>
-
-        <li class="step pending">
-          <div class="step-n">4</div>
-          <div class="thumb"><div class="play"></div></div>
+          <div class="step-n">2</div>
+          <a class="thumb" href="https://drive.google.com/file/d/1--B-t6ZW3kFTXKB_fKJuhfUiwxpDN6BX/view?usp=sharing" target="_blank" rel="noopener" aria-label="Watch the first draft walkthrough"><div class="play"></div></a>
           <div class="step-body">
             <div class="step-kind">Video</div>
             <h3 class="step-title">Walkthrough of the first draft</h3>
-            <p class="step-desc">
-              How the intentions translate into a working site, and what still
-              needs decisions.
-            </p>
+            <p class="step-desc">How the findings translate into a working site, and what still needs decisions.</p>
           </div>
-          <!-- VIDEO 3: replace this block's `pending` class and add the embed/link when recorded -->
-          <div class="step-act">
-            <span class="pending">Not yet recorded</span>
-          </div>
+          <div class="step-act"><a href="https://drive.google.com/file/d/1--B-t6ZW3kFTXKB_fKJuhfUiwxpDN6BX/view?usp=sharing" target="_blank" rel="noopener">Watch &#8594;</a></div>
         </li>
 
+      </ol>
+
+      <h2 class="steps-head sec-explore">Explore</h2>
+      <ol class="steps sec-explore">
+
         <li class="step">
-          <div class="step-n">5</div>
-          <a
-            class="thumb site"
-            href="first-draft/index.html"
-            aria-label="Open the first draft site"
-            >First draft</a
-          >
+          <div class="step-n">3</div>
+          <a class="thumb site" href="first-draft/index.html" aria-label="Open the first draft site">First draft</a>
           <div class="step-body">
             <div class="step-kind">Website</div>
             <h3 class="step-title">The first draft, in full</h3>
-            <p class="step-desc">
-              A working eight-page site built from the revised content.
-            </p>
+            <p class="step-desc">A working eight-page site built from the revised content.</p>
           </div>
-          <div class="step-act">
-            <a href="first-draft/index.html">Open →</a>
-          </div>
+          <div class="step-act"><a href="first-draft/index.html">Open &#8594;</a></div>
         </li>
+
+      </ol>
+
+      <h2 class="steps-head sec-read">Read</h2>
+      <ol class="steps sec-read">
+
+        <li class="step">
+          <div class="step-n">4</div>
+          <a class="thumb doc" href="assets/numorph-content-audit-summary.pdf" aria-label="Download the audit summary">PDF</a>
+          <div class="step-body">
+            <div class="step-kind">Document &middot; 5 pages</div>
+            <h3 class="step-title">Audit summary</h3>
+            <p class="step-desc">The findings, the recommendations, and the decisions still open.</p>
+          </div>
+          <div class="step-act"><a href="assets/numorph-content-audit-summary.pdf" download>Download &#8595;</a></div>
+        </li>
+
       </ol>
 
       <footer>NuMorph AI · Content Audit 1 · September 2026</footer>

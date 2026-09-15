@@ -19,6 +19,11 @@ intentions/    the Section Intentions wireframe (was site/intentions/)
 
 The plan is left unedited as a record of what was planned at the time.
 
+**The intentions stack was subsequently dropped** (2026-09-14). It was built and published,
+then removed from the deliverables as not carrying enough value for the client. The plan and
+the references below are kept as a record of work that was actually done; the `intentions/`
+directory no longer exists.
+
 ## Not captured here
 
 The same session first produced a **seed-docs rebuild plan** (reconstruct numorph.ai from
